@@ -51,6 +51,9 @@ def nextConfig(config, transitions):
 def ntm(acceptState, rejectState, transitions, config, maxDepth):
     tree = [[config]]
     depth = 0
+    configCounter = 0 
+    totalNonDeterminism = 0  
+    levelsProcessed = 0 
 
     while depth < maxDepth:
         currLevel = tree[-1]
@@ -69,21 +72,39 @@ def ntm(acceptState, rejectState, transitions, config, maxDepth):
             # check if the current state is the accept state
             if state == acceptState:
                 print(f"String accepted in {depth} steps!")
+                print(f"Total configurations processed: {configCounter}")
+                if levelsProcessed > 0:
+                    print(f"Average non-determinism: {totalNonDeterminism / levelsProcessed:.2f}")
                 return
             # check if the current state is not the reject state
             elif state != rejectState:
-                nextLevel.extend(nextConfig(config, transitions))
+                newConfigs = nextConfig(config, transitions)
+                nextLevel.extend(newConfigs)
+                configCounter += len(newConfigs)  # Increment the counter
+        
+        # calculate non-determinism for this level
+        if currLevel:
+            nonDeterminism = len(nextLevel) / len(currLevel)
+            totalNonDeterminism += nonDeterminism
+            levelsProcessed += 1
+            print(f"  Average non-determinism at depth {depth}: {nonDeterminism:.2f}")
         
         # if no next level configurations, reject the string
         if not nextLevel:
             print()
             print(f"String rejected in {depth} steps!")
+            print(f"Total configurations processed: {configCounter}")
+            if levelsProcessed > 0:
+                print(f"Average non-determinism: {totalNonDeterminism / levelsProcessed:.2f}")
             return
 
         tree.append(nextLevel)
         depth += 1
     
     print(f"Execution stopped after max depth of {maxDepth}.")
+    print(f"Total configurations processed: {configCounter}")
+    if levelsProcessed > 0:
+        print(f"Average non-determinism: {totalNonDeterminism / levelsProcessed:.2f}")
 
 def main():
     # loop while user wants to test more files
