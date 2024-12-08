@@ -1,0 +1,795 @@
+Enter the NTM CSV filename or q to quit: a_plus.csv
+
+Machine Name: a plus
+=====================================
+(press Enter to use a different test file or q to quit)
+Enter the input string: a
+
+Initial Configuration:
+  _, q1, a, _
+Depth 1:
+  a, q1, _, _
+  a, q2, _, _
+Depth 2:
+  _, q3, a, _
+String accepted in 2 steps!
+=====================================
+
+(press Enter to use a different test file or q to quit)
+Enter the input string: aa
+
+Initial Configuration:
+  _, q1, a, a
+Depth 1:
+  a, q1, a, _
+  a, q2, a, _
+Depth 2:
+  aa, q1, _, _
+  aa, q2, _, _
+Depth 3:
+  a, q3, a, _
+String accepted in 3 steps!
+=====================================
+
+(press Enter to use a different test file or q to quit)
+Enter the input string: aaa
+
+Initial Configuration:
+  _, q1, a, aa
+Depth 1:
+  a, q1, a, a
+  a, q2, a, a
+Depth 2:
+  aa, q1, a, _
+  aa, q2, a, _
+Depth 3:
+  aaa, q1, _, _
+  aaa, q2, _, _
+Depth 4:
+  aa, q3, a, _
+String accepted in 4 steps!
+=====================================
+
+(press Enter to use a different test file or q to quit)
+Enter the input string: ab
+
+Initial Configuration:
+  _, q1, a, b
+Depth 1:
+  a, q1, b, _
+  a, q2, b, _
+
+String rejected in 1 steps!
+=====================================
+
+(press Enter to use a different test file or q to quit)
+Enter the input string: b
+
+Initial Configuration:
+  _, q1, b, _
+
+String rejected in 0 steps!
+=====================================
+
+(press Enter to use a different test file or q to quit)
+Enter the input string:   
+Enter the NTM CSV filename or q to quit: abc_star.csv
+
+Machine Name: a*b*c* Nondeterministic
+=====================================
+(press Enter to use a different test file or q to quit)
+Enter the input string: a     
+
+Initial Configuration:
+  _, q0, a, _
+Depth 1:
+  a, q0, _, _
+  a, q1, _, _
+  a, q2, _, _
+  a, q3, _, _
+Depth 2:
+  a_, q3, _, _
+  a_, qacc, _, _
+String accepted in 2 steps!
+=====================================
+
+(press Enter to use a different test file or q to quit)
+Enter the input string: b 
+
+Initial Configuration:
+  _, q0, b, _
+Depth 1:
+  b, q1, _, _
+  b, q2, _, _
+  b, q3, _, _
+Depth 2:
+  b_, qacc, _, _
+String accepted in 2 steps!
+=====================================
+
+(press Enter to use a different test file or q to quit)
+Enter the input string: c
+
+Initial Configuration:
+  _, q0, c, _
+Depth 1:
+  c, q2, _, _
+  c, q3, _, _
+Depth 2:
+  c_, qacc, _, _
+String accepted in 2 steps!
+=====================================
+
+(press Enter to use a different test file or q to quit)
+Enter the input string: abc
+
+Initial Configuration:
+  _, q0, a, bc
+Depth 1:
+  a, q0, b, c
+  a, q1, b, c
+  a, q2, b, c
+  a, q3, b, c
+Depth 2:
+  ab, q1, c, _
+  ab, q2, c, _
+  ab, q3, c, _
+  ab, q1, c, _
+  ab, q2, c, _
+  ab, q3, c, _
+Depth 3:
+  abc, q2, _, _
+  abc, q3, _, _
+  abc, q2, _, _
+  abc, q3, _, _
+Depth 4:
+  abc_, qacc, _, _
+String accepted in 4 steps!
+=====================================
+
+(press Enter to use a different test file or q to quit)
+Enter the input string: ab
+
+Initial Configuration:
+  _, q0, a, b
+Depth 1:
+  a, q0, b, _
+  a, q1, b, _
+  a, q2, b, _
+  a, q3, b, _
+Depth 2:
+  ab, q1, _, _
+  ab, q2, _, _
+  ab, q3, _, _
+  ab, q1, _, _
+  ab, q2, _, _
+  ab, q3, _, _
+Depth 3:
+  ab_, qacc, _, _
+String accepted in 3 steps!
+=====================================
+
+(press Enter to use a different test file or q to quit)
+Enter the input string: aaaabbbbac
+
+Initial Configuration:
+  _, q0, a, aaabbbbac
+Depth 1:
+  a, q0, a, aabbbbac
+  a, q1, a, aabbbbac
+  a, q2, a, aabbbbac
+  a, q3, a, aabbbbac
+Depth 2:
+  aa, q0, a, abbbbac
+  aa, q1, a, abbbbac
+  aa, q2, a, abbbbac
+  aa, q3, a, abbbbac
+Depth 3:
+  aaa, q0, a, bbbbac
+  aaa, q1, a, bbbbac
+  aaa, q2, a, bbbbac
+  aaa, q3, a, bbbbac
+Depth 4:
+  aaaa, q0, b, bbbac
+  aaaa, q1, b, bbbac
+  aaaa, q2, b, bbbac
+  aaaa, q3, b, bbbac
+Depth 5:
+  aaaab, q1, b, bbac
+  aaaab, q2, b, bbac
+  aaaab, q3, b, bbac
+  aaaab, q1, b, bbac
+  aaaab, q2, b, bbac
+  aaaab, q3, b, bbac
+Depth 6:
+  aaaabb, q1, b, bac
+  aaaabb, q2, b, bac
+  aaaabb, q3, b, bac
+  aaaabb, q1, b, bac
+  aaaabb, q2, b, bac
+  aaaabb, q3, b, bac
+Depth 7:
+  aaaabbb, q1, b, ac
+  aaaabbb, q2, b, ac
+  aaaabbb, q3, b, ac
+  aaaabbb, q1, b, ac
+  aaaabbb, q2, b, ac
+  aaaabbb, q3, b, ac
+Depth 8:
+  aaaabbbb, q1, a, c
+  aaaabbbb, q2, a, c
+  aaaabbbb, q3, a, c
+  aaaabbbb, q1, a, c
+  aaaabbbb, q2, a, c
+  aaaabbbb, q3, a, c
+
+String rejected in 8 steps!
+=====================================
+
+(press Enter to use a different test file or q to quit)
+Enter the input string: aaaabbbbbbbbbbc
+
+Initial Configuration:
+  _, q0, a, aaabbbbbbbbbbc
+Depth 1:
+  a, q0, a, aabbbbbbbbbbc
+  a, q1, a, aabbbbbbbbbbc
+  a, q2, a, aabbbbbbbbbbc
+  a, q3, a, aabbbbbbbbbbc
+Depth 2:
+  aa, q0, a, abbbbbbbbbbc
+  aa, q1, a, abbbbbbbbbbc
+  aa, q2, a, abbbbbbbbbbc
+  aa, q3, a, abbbbbbbbbbc
+Depth 3:
+  aaa, q0, a, bbbbbbbbbbc
+  aaa, q1, a, bbbbbbbbbbc
+  aaa, q2, a, bbbbbbbbbbc
+  aaa, q3, a, bbbbbbbbbbc
+Depth 4:
+  aaaa, q0, b, bbbbbbbbbc
+  aaaa, q1, b, bbbbbbbbbc
+  aaaa, q2, b, bbbbbbbbbc
+  aaaa, q3, b, bbbbbbbbbc
+Depth 5:
+  aaaab, q1, b, bbbbbbbbc
+  aaaab, q2, b, bbbbbbbbc
+  aaaab, q3, b, bbbbbbbbc
+  aaaab, q1, b, bbbbbbbbc
+  aaaab, q2, b, bbbbbbbbc
+  aaaab, q3, b, bbbbbbbbc
+Depth 6:
+  aaaabb, q1, b, bbbbbbbc
+  aaaabb, q2, b, bbbbbbbc
+  aaaabb, q3, b, bbbbbbbc
+  aaaabb, q1, b, bbbbbbbc
+  aaaabb, q2, b, bbbbbbbc
+  aaaabb, q3, b, bbbbbbbc
+Depth 7:
+  aaaabbb, q1, b, bbbbbbc
+  aaaabbb, q2, b, bbbbbbc
+  aaaabbb, q3, b, bbbbbbc
+  aaaabbb, q1, b, bbbbbbc
+  aaaabbb, q2, b, bbbbbbc
+  aaaabbb, q3, b, bbbbbbc
+Depth 8:
+  aaaabbbb, q1, b, bbbbbc
+  aaaabbbb, q2, b, bbbbbc
+  aaaabbbb, q3, b, bbbbbc
+  aaaabbbb, q1, b, bbbbbc
+  aaaabbbb, q2, b, bbbbbc
+  aaaabbbb, q3, b, bbbbbc
+Depth 9:
+  aaaabbbbb, q1, b, bbbbc
+  aaaabbbbb, q2, b, bbbbc
+  aaaabbbbb, q3, b, bbbbc
+  aaaabbbbb, q1, b, bbbbc
+  aaaabbbbb, q2, b, bbbbc
+  aaaabbbbb, q3, b, bbbbc
+Depth 10:
+  aaaabbbbbb, q1, b, bbbc
+  aaaabbbbbb, q2, b, bbbc
+  aaaabbbbbb, q3, b, bbbc
+  aaaabbbbbb, q1, b, bbbc
+  aaaabbbbbb, q2, b, bbbc
+  aaaabbbbbb, q3, b, bbbc
+Depth 11:
+  aaaabbbbbbb, q1, b, bbc
+  aaaabbbbbbb, q2, b, bbc
+  aaaabbbbbbb, q3, b, bbc
+  aaaabbbbbbb, q1, b, bbc
+  aaaabbbbbbb, q2, b, bbc
+  aaaabbbbbbb, q3, b, bbc
+Depth 12:
+  aaaabbbbbbbb, q1, b, bc
+  aaaabbbbbbbb, q2, b, bc
+  aaaabbbbbbbb, q3, b, bc
+  aaaabbbbbbbb, q1, b, bc
+  aaaabbbbbbbb, q2, b, bc
+  aaaabbbbbbbb, q3, b, bc
+Depth 13:
+  aaaabbbbbbbbb, q1, b, c
+  aaaabbbbbbbbb, q2, b, c
+  aaaabbbbbbbbb, q3, b, c
+  aaaabbbbbbbbb, q1, b, c
+  aaaabbbbbbbbb, q2, b, c
+  aaaabbbbbbbbb, q3, b, c
+Depth 14:
+  aaaabbbbbbbbbb, q1, c, _
+  aaaabbbbbbbbbb, q2, c, _
+  aaaabbbbbbbbbb, q3, c, _
+  aaaabbbbbbbbbb, q1, c, _
+  aaaabbbbbbbbbb, q2, c, _
+  aaaabbbbbbbbbb, q3, c, _
+Depth 15:
+  aaaabbbbbbbbbbc, q2, _, _
+  aaaabbbbbbbbbbc, q3, _, _
+  aaaabbbbbbbbbbc, q2, _, _
+  aaaabbbbbbbbbbc, q3, _, _
+Depth 16:
+  aaaabbbbbbbbbbc_, qacc, _, _
+String accepted in 16 steps!
+=====================================
+
+(press Enter to use a different test file or q to quit)
+Enter the input string: bac
+
+Initial Configuration:
+  _, q0, b, ac
+Depth 1:
+  b, q1, a, c
+  b, q2, a, c
+  b, q3, a, c
+
+String rejected in 1 steps!
+=====================================
+
+(press Enter to use a different test file or q to quit)
+Enter the input string: abc
+
+Initial Configuration:
+  _, q0, a, bc
+Depth 1:
+  a, q0, b, c
+  a, q1, b, c
+  a, q2, b, c
+  a, q3, b, c
+Depth 2:
+  ab, q1, c, _
+  ab, q2, c, _
+  ab, q3, c, _
+  ab, q1, c, _
+  ab, q2, c, _
+  ab, q3, c, _
+Depth 3:
+  abc, q2, _, _
+  abc, q3, _, _
+  abc, q2, _, _
+  abc, q3, _, _
+Depth 4:
+  abc_, qacc, _, _
+String accepted in 4 steps!
+=====================================
+
+(press Enter to use a different test file or q to quit)
+Enter the input string: 
+Enter the NTM CSV filename or q to quit: equal_01s.csv
+
+Machine Name: {w | w has the same number of 0's and 1's} Nondeterministic
+=====================================
+(press Enter to use a different test file or q to quit)
+Enter the input string: 00000
+
+Initial Configuration:
+  _, q0, 0, 0000
+Depth 1:
+  _, q1, 0, 000
+Depth 2:
+  _0, q1, 0, 00
+Depth 3:
+  _00, q1, 0, 0
+Depth 4:
+  _000, q1, 0, _
+Depth 5:
+  _0000, q1, _, _
+
+String rejected in 5 steps!
+=====================================
+
+(press Enter to use a different test file or q to quit)
+Enter the input string: 01
+
+Initial Configuration:
+  _, q0, 0, 1
+Depth 1:
+  _, q1, 1, _
+Depth 2:
+  _, q3, _, x
+Depth 3:
+  _, q4, x, _
+  _, q5, x, _
+Depth 4:
+  _x, q4, _, _
+  _x, q5, _, _
+Depth 5:
+  _, q3, x, _
+  _x_, qacc, _, _
+String accepted in 5 steps!
+=====================================
+
+(press Enter to use a different test file or q to quit)
+Enter the input string: 10
+
+Initial Configuration:
+  _, q0, 1, 0
+Depth 1:
+  _, q2, 0, _
+Depth 2:
+  _, q3, _, x
+Depth 3:
+  _, q4, x, _
+  _, q5, x, _
+Depth 4:
+  _x, q4, _, _
+  _x, q5, _, _
+Depth 5:
+  _, q3, x, _
+  _x_, qacc, _, _
+String accepted in 5 steps!
+=====================================
+
+(press Enter to use a different test file or q to quit)
+Enter the input string: 01010101
+
+Initial Configuration:
+  _, q0, 0, 1010101
+Depth 1:
+  _, q1, 1, 010101
+Depth 2:
+  _, q3, _, x010101
+Depth 3:
+  _, q4, x, 010101
+  _, q5, x, 010101
+Depth 4:
+  _x, q4, 0, 10101
+  _x, q5, 0, 10101
+Depth 5:
+  _xx, q1, 1, 0101
+Depth 6:
+  _x, q3, x, x0101
+Depth 7:
+  _, q3, x, xx0101
+Depth 8:
+  _, q3, _, xxx0101
+Depth 9:
+  _, q4, x, xx0101
+  _, q5, x, xx0101
+Depth 10:
+  _x, q4, x, x0101
+  _x, q5, x, x0101
+Depth 11:
+  _xx, q4, x, 0101
+  _xx, q5, x, 0101
+Depth 12:
+  _xxx, q4, 0, 101
+  _xxx, q5, 0, 101
+Depth 13:
+  _xxxx, q1, 1, 01
+Depth 14:
+  _xxx, q3, x, x01
+Depth 15:
+  _xx, q3, x, xx01
+Depth 16:
+  _x, q3, x, xxx01
+Depth 17:
+  _, q3, x, xxxx01
+Depth 18:
+  _, q3, _, xxxxx01
+Depth 19:
+  _, q4, x, xxxx01
+  _, q5, x, xxxx01
+Depth 20:
+  _x, q4, x, xxx01
+  _x, q5, x, xxx01
+Depth 21:
+  _xx, q4, x, xx01
+  _xx, q5, x, xx01
+Depth 22:
+  _xxx, q4, x, x01
+  _xxx, q5, x, x01
+Depth 23:
+  _xxxx, q4, x, 01
+  _xxxx, q5, x, 01
+Depth 24:
+  _xxxxx, q4, 0, 1
+  _xxxxx, q5, 0, 1
+Depth 25:
+  _xxxxxx, q1, 1, _
+Depth 26:
+  _xxxxx, q3, x, x
+Depth 27:
+  _xxxx, q3, x, xx
+Depth 28:
+  _xxx, q3, x, xxx
+Depth 29:
+  _xx, q3, x, xxxx
+Depth 30:
+  _x, q3, x, xxxxx
+Depth 31:
+  _, q3, x, xxxxxx
+Depth 32:
+  _, q3, _, xxxxxxx
+Depth 33:
+  _, q4, x, xxxxxx
+  _, q5, x, xxxxxx
+Depth 34:
+  _x, q4, x, xxxxx
+  _x, q5, x, xxxxx
+Depth 35:
+  _xx, q4, x, xxxx
+  _xx, q5, x, xxxx
+Depth 36:
+  _xxx, q4, x, xxx
+  _xxx, q5, x, xxx
+Depth 37:
+  _xxxx, q4, x, xx
+  _xxxx, q5, x, xx
+Depth 38:
+  _xxxxx, q4, x, x
+  _xxxxx, q5, x, x
+Depth 39:
+  _xxxxxx, q4, x, _
+  _xxxxxx, q5, x, _
+Depth 40:
+  _xxxxxxx, q4, _, _
+  _xxxxxxx, q5, _, _
+Depth 41:
+  _xxxxxx, q3, x, _
+  _xxxxxxx_, qacc, _, _
+String accepted in 41 steps!
+=====================================
+
+(press Enter to use a different test file or q to quit)
+Enter the input string: 000001
+
+Initial Configuration:
+  _, q0, 0, 00001
+Depth 1:
+  _, q1, 0, 0001
+Depth 2:
+  _0, q1, 0, 001
+Depth 3:
+  _00, q1, 0, 01
+Depth 4:
+  _000, q1, 0, 1
+Depth 5:
+  _0000, q1, 1, _
+Depth 6:
+  _000, q3, 0, x
+Depth 7:
+  _00, q3, 0, 0x
+Depth 8:
+  _0, q3, 0, 00x
+Depth 9:
+  _, q3, 0, 000x
+Depth 10:
+  _, q3, _, 0000x
+Depth 11:
+  _, q4, 0, 000x
+  _, q5, 0, 000x
+Depth 12:
+  _x, q1, 0, 00x
+Depth 13:
+  _x0, q1, 0, 0x
+Depth 14:
+  _x00, q1, 0, x
+Depth 15:
+  _x000, q1, x, _
+Depth 16:
+  _x000x, q1, _, _
+
+String rejected in 16 steps!
+=====================================
+
+(press Enter to use a different test file or q to quit)
+Enter the input string: 11110
+
+Initial Configuration:
+  _, q0, 1, 1110
+Depth 1:
+  _, q2, 1, 110
+Depth 2:
+  _1, q2, 1, 10
+Depth 3:
+  _11, q2, 1, 0
+Depth 4:
+  _111, q2, 0, _
+Depth 5:
+  _11, q3, 1, x
+Depth 6:
+  _1, q3, 1, 1x
+Depth 7:
+  _, q3, 1, 11x
+Depth 8:
+  _, q3, _, 111x
+Depth 9:
+  _, q4, 1, 11x
+  _, q5, 1, 11x
+Depth 10:
+  _x, q2, 1, 1x
+Depth 11:
+  _x1, q2, 1, x
+Depth 12:
+  _x11, q2, x, _
+Depth 13:
+  _x11x, q2, _, _
+
+String rejected in 13 steps!
+=====================================
+
+(press Enter to use a different test file or q to quit)
+Enter the input string: 110101
+
+Initial Configuration:
+  _, q0, 1, 10101
+Depth 1:
+  _, q2, 1, 0101
+Depth 2:
+  _1, q2, 0, 101
+Depth 3:
+  _, q3, 1, x101
+Depth 4:
+  _, q3, _, 1x101
+Depth 5:
+  _, q4, 1, x101
+  _, q5, 1, x101
+Depth 6:
+  _x, q2, x, 101
+Depth 7:
+  _xx, q2, 1, 01
+Depth 8:
+  _xx1, q2, 0, 1
+Depth 9:
+  _xx, q3, 1, x1
+Depth 10:
+  _x, q3, x, 1x1
+Depth 11:
+  _, q3, x, x1x1
+Depth 12:
+  _, q3, _, xx1x1
+Depth 13:
+  _, q4, x, x1x1
+  _, q5, x, x1x1
+Depth 14:
+  _x, q4, x, 1x1
+  _x, q5, x, 1x1
+Depth 15:
+  _xx, q4, 1, x1
+  _xx, q5, 1, x1
+Depth 16:
+  _xxx, q2, x, 1
+Depth 17:
+  _xxxx, q2, 1, _
+Depth 18:
+  _xxxx1, q2, _, _
+
+String rejected in 18 steps!
+=====================================
+
+(press Enter to use a different test file or q to quit)
+Enter the input string: 11000110
+
+Initial Configuration:
+  _, q0, 1, 1000110
+Depth 1:
+  _, q2, 1, 000110
+Depth 2:
+  _1, q2, 0, 00110
+Depth 3:
+  _, q3, 1, x00110
+Depth 4:
+  _, q3, _, 1x00110
+Depth 5:
+  _, q4, 1, x00110
+  _, q5, 1, x00110
+Depth 6:
+  _x, q2, x, 00110
+Depth 7:
+  _xx, q2, 0, 0110
+Depth 8:
+  _x, q3, x, x0110
+Depth 9:
+  _, q3, x, xx0110
+Depth 10:
+  _, q3, _, xxx0110
+Depth 11:
+  _, q4, x, xx0110
+  _, q5, x, xx0110
+Depth 12:
+  _x, q4, x, x0110
+  _x, q5, x, x0110
+Depth 13:
+  _xx, q4, x, 0110
+  _xx, q5, x, 0110
+Depth 14:
+  _xxx, q4, 0, 110
+  _xxx, q5, 0, 110
+Depth 15:
+  _xxxx, q1, 1, 10
+Depth 16:
+  _xxx, q3, x, x10
+Depth 17:
+  _xx, q3, x, xx10
+Depth 18:
+  _x, q3, x, xxx10
+Depth 19:
+  _, q3, x, xxxx10
+Depth 20:
+  _, q3, _, xxxxx10
+Depth 21:
+  _, q4, x, xxxx10
+  _, q5, x, xxxx10
+Depth 22:
+  _x, q4, x, xxx10
+  _x, q5, x, xxx10
+Depth 23:
+  _xx, q4, x, xx10
+  _xx, q5, x, xx10
+Depth 24:
+  _xxx, q4, x, x10
+  _xxx, q5, x, x10
+Depth 25:
+  _xxxx, q4, x, 10
+  _xxxx, q5, x, 10
+Depth 26:
+  _xxxxx, q4, 1, 0
+  _xxxxx, q5, 1, 0
+Depth 27:
+  _xxxxxx, q2, 0, _
+Depth 28:
+  _xxxxx, q3, x, x
+Depth 29:
+  _xxxx, q3, x, xx
+Depth 30:
+  _xxx, q3, x, xxx
+Depth 31:
+  _xx, q3, x, xxxx
+Depth 32:
+  _x, q3, x, xxxxx
+Depth 33:
+  _, q3, x, xxxxxx
+Depth 34:
+  _, q3, _, xxxxxxx
+Depth 35:
+  _, q4, x, xxxxxx
+  _, q5, x, xxxxxx
+Depth 36:
+  _x, q4, x, xxxxx
+  _x, q5, x, xxxxx
+Depth 37:
+  _xx, q4, x, xxxx
+  _xx, q5, x, xxxx
+Depth 38:
+  _xxx, q4, x, xxx
+  _xxx, q5, x, xxx
+Depth 39:
+  _xxxx, q4, x, xx
+  _xxxx, q5, x, xx
+Depth 40:
+  _xxxxx, q4, x, x
+  _xxxxx, q5, x, x
+Depth 41:
+  _xxxxxx, q4, x, _
+  _xxxxxx, q5, x, _
+Depth 42:
+  _xxxxxxx, q4, _, _
+  _xxxxxxx, q5, _, _
+Depth 43:
+  _xxxxxx, q3, x, _
+  _xxxxxxx_, qacc, _, _
+String accepted in 43 steps!
+=====================================
+
+(press Enter to use a different test file or q to quit)
+Enter the input string: q
+Goodbye!
